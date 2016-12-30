@@ -20,31 +20,32 @@ import Box from 'grommet/components/Box';
 import {BomHeader} from './BomHeader'
 import {BomItems} from './BomItems'
 import {getTransitionProps} from '../../getTransitionProps'
+import {transition} from '../../css-transition'
 
 class BOM extends React.Component {
 
   render(){
-
-    let {transitionHooks} = this.props;
-    console.log("render BOM");
-    console.log(transitionHooks);
-    if(transitionHooks.willEnter.called){
-      console.log("willEnter called");
-      setTimeout(transitionHooks.willEnter.callback,10000)
-    }
-    if(transitionHooks.willLeave.called){
-      console.log("willLeave called");
-      setTimeout(transitionHooks.willLeave.callback,10000)
-    }
+    let {animationClasses} = this.props;
 
     return(
+      <Box className={animationClasses}>
       <Box style={{width:940,margin:"0 auto"}}>
         <BomHeader/>
         <BomItems items={[{a:1},{a:1},{a:1},{a:1}]} />
+      </Box>
       </Box>
     )
   }
 
 }
 
-export default getTransitionProps(BOM);
+export default transition(BOM,{
+  willEnter: {
+    classNames: "section animated fadeInRightBig",
+    duration: 1000
+  },
+  willLeave: {
+    classNames: "section animated fadeOutRightBig",
+    duration: 1000
+  },
+});

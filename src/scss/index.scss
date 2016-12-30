@@ -20,7 +20,14 @@
 @import 'colors';
 @import 'globals';
 @import 'bom';
+@import 'animations';
 
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 .grommet.grommetux-drop{
 
   z-index: 1000000 !important;

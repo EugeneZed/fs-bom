@@ -23,7 +23,7 @@ import {AddBomModal} from './AddBomModal'
 /*******************Redux***************************/
 import {connect} from 'react-redux';
 import {fetchBoms, addBom, addBomModalOpen, addBomModalClose, accordionChange, willEnter, willLeave} from '../../actions/home'
-import {getTransitionProps} from '../../getTransitionProps'
+import {transition} from '../../css-transition'
 
 /****************************************************/
 class Home extends React.Component {
@@ -35,16 +35,6 @@ class Home extends React.Component {
   }
 
   render(){
-    let {transitionHooks} = this.props;
-    if(transitionHooks.willEnter.called){
-      console.log("willEnter called");
-      setTimeout(transitionHooks.willEnter.callback,10000)
-    }
-    if(transitionHooks.willLeave.called){
-      console.log("willLeave called");
-      setTimeout(transitionHooks.willLeave.callback,10000)
-    }
-
     let {activeAccordion,
           isFetching,
           boms,
@@ -53,9 +43,11 @@ class Home extends React.Component {
           onRefreshButtonClick,
           onAddBomModalCloseClick,
           onAddBomButtonClick,
-          onAccordionChange} = this.props
+          onAccordionChange,
+          animationClasses} = this.props
 
     return(
+        <Box className={animationClasses}>
         <Box style={{width:940,margin:"0 auto"}}>
           <HomeHeader
             onAddButtonClick={onAddButtonClick}
@@ -75,11 +67,12 @@ class Home extends React.Component {
                   onCloseClick={onAddBomModalCloseClick} />
           }
         </Box>
+        </Box>
       );
   }
 }
 
-export default getTransitionProps(connect(
+export default transition(connect(
       (state) => ({
         boms: state.home.boms,
         isFetching : state.home.isFetching,
@@ -96,4 +89,13 @@ export default getTransitionProps(connect(
         willEnter: willEnter,
         willLeave: willLeave
       }
-)(Home))
+)(Home),{
+  willEnter: {
+    classNames: "section animated fadeInLeftBig",
+    duration: 1000
+  },
+  willLeave: {
+    classNames: "section animated fadeOutLeftBig",
+    duration: 1000
+  },
+})
