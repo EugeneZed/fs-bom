@@ -17,7 +17,6 @@
 
 import Home from './components/home/Home';
 import BOM from './components/bom/BOM';
-import TransitionContainer from './components/TransitionContainer'
 
 export let routes = [
       { path: '/fs-bom/www/bom/:bomID', component: BOM},
