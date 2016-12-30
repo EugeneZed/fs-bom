@@ -19,10 +19,24 @@ import React from 'react';
 import Box from 'grommet/components/Box';
 import {BomHeader} from './BomHeader'
 import {BomItems} from './BomItems'
+import {getTransitionProps} from '../../getTransitionProps'
 
 class BOM extends React.Component {
 
   render(){
+
+    let {transitionHooks} = this.props;
+    console.log("render BOM");
+    console.log(transitionHooks);
+    if(transitionHooks.willEnter.called){
+      console.log("willEnter called");
+      setTimeout(transitionHooks.willEnter.callback,10000)
+    }
+    if(transitionHooks.willLeave.called){
+      console.log("willLeave called");
+      setTimeout(transitionHooks.willLeave.callback,10000)
+    }
+
     return(
       <Box style={{width:940,margin:"0 auto"}}>
         <BomHeader/>
@@ -33,4 +47,4 @@ class BOM extends React.Component {
 
 }
 
-export default BOM;
+export default getTransitionProps(BOM);

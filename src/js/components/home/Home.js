@@ -23,12 +23,28 @@ import {AddBomModal} from './AddBomModal'
 /*******************Redux***************************/
 import {connect} from 'react-redux';
 import {fetchBoms, addBom, addBomModalOpen, addBomModalClose, accordionChange, willEnter, willLeave} from '../../actions/home'
+import {getTransitionProps} from '../../getTransitionProps'
+
 /****************************************************/
 class Home extends React.Component {
   componentDidMount(){
     this.props.onMount();
   }
+  componentWillUnmount(){
+    console.log("componentWillUnmount")
+  }
+
   render(){
+    let {transitionHooks} = this.props;
+    if(transitionHooks.willEnter.called){
+      console.log("willEnter called");
+      setTimeout(transitionHooks.willEnter.callback,10000)
+    }
+    if(transitionHooks.willLeave.called){
+      console.log("willLeave called");
+      setTimeout(transitionHooks.willLeave.callback,10000)
+    }
+
     let {activeAccordion,
           isFetching,
           boms,
@@ -63,7 +79,7 @@ class Home extends React.Component {
   }
 }
 
-export default connect(
+export default getTransitionProps(connect(
       (state) => ({
         boms: state.home.boms,
         isFetching : state.home.isFetching,
@@ -80,4 +96,4 @@ export default connect(
         willEnter: willEnter,
         willLeave: willLeave
       }
-)(Home)
+)(Home))
