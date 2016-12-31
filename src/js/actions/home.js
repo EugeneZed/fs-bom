@@ -41,6 +41,7 @@ export const ADD_BOM_CLOSE = 'ADD_BOM_CLOSE';
 export const ACCORDION_CHANGE = 'ACCORDION_CHANGE';
 export const HOME_WILL_ENTER = 'HOME_WILL_ENTER';
 export const HOME_WILL_LEAVE = 'HOME_WILL_LEAVE';
+export const HOME_TRANSITION_COMPLETE = 'HOME_TRANSITION_COMPLETE';
 
 
 /***************************/
@@ -122,5 +123,6 @@ export const addBomModalClose = () => ({type: ADD_BOM_CLOSE})
 export const accordionChange = (year) => ({type: ACCORDION_CHANGE, year: typeof year =="undefined" ? null:year})
 export const willEnter = () => ({type: HOME_WILL_ENTER})
 export const willLeave = () => ({type: HOME_WILL_LEAVE})
+export const transitionComplete = () => ({type: HOME_TRANSITION_COMPLETE})
 
 /***************************/

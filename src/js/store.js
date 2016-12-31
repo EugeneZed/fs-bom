@@ -20,6 +20,7 @@ import homeReducer from './reducers/home';
 import bomReducer from './reducers/bom';
 import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
+import transitionReducer from './reducers/transitions'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -30,7 +31,8 @@ export default createStore(
     home:homeReducer,
     bom: bomReducer,
     routing: routerReducer,
-    form: formReducer
+    form: formReducer,
+    transitions: transitionReducer
   }),
   composeEnhancers(
       applyMiddleware(...middlewares)

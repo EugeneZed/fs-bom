@@ -22,7 +22,7 @@ import {AddBomModal} from './AddBomModal'
 
 /*******************Redux***************************/
 import {connect} from 'react-redux';
-import {fetchBoms, addBom, addBomModalOpen, addBomModalClose, accordionChange, willEnter, willLeave} from '../../actions/home'
+import {fetchBoms, addBom, addBomModalOpen, addBomModalClose, accordionChange, willEnter, willLeave, transitionComplete} from '../../actions/home'
 import {transition} from '../../css-transition'
 
 /****************************************************/
@@ -30,10 +30,6 @@ class Home extends React.Component {
   componentDidMount(){
     this.props.onMount();
   }
-  componentWillUnmount(){
-    console.log("componentWillUnmount")
-  }
-
   render(){
     let {activeAccordion,
           isFetching,
@@ -85,11 +81,10 @@ export default transition(connect(
         onRefreshButtonClick: fetchBoms,
         onAddBomModalCloseClick: addBomModalClose,
         onAddBomButtonClick: addBom,
-        onAccordionChange: accordionChange,
-        willEnter: willEnter,
-        willLeave: willLeave
+        onAccordionChange: accordionChange
       }
 )(Home),{
+  key: "home",
   willEnter: {
     classNames: "section animated fadeInLeftBig",
     duration: 1000

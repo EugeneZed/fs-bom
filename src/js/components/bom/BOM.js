@@ -21,6 +21,7 @@ import {BomHeader} from './BomHeader'
 import {BomItems} from './BomItems'
 import {getTransitionProps} from '../../getTransitionProps'
 import {transition} from '../../css-transition'
+import {willEnter,willLeave,transitionComplete} from '../../actions/bom'
 
 class BOM extends React.Component {
 
@@ -40,6 +41,7 @@ class BOM extends React.Component {
 }
 
 export default transition(BOM,{
+  key: "bom",
   willEnter: {
     classNames: "section animated fadeInRightBig",
     duration: 1000
