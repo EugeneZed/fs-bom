@@ -19,7 +19,6 @@ import React from 'react';
 import Box from 'grommet/components/Box';
 import {BomHeader} from './BomHeader'
 import {BomItems} from './BomItems'
-import {getTransitionProps} from '../../getTransitionProps'
 import {transition} from '../../css-transition'
 import {willEnter,willLeave,transitionComplete} from '../../actions/bom'
 
