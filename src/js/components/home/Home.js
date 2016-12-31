@@ -24,7 +24,7 @@ import {AddBomModal} from './AddBomModal'
 import {connect} from 'react-redux';
 import {fetchBoms, addBom, addBomModalOpen, addBomModalClose, accordionChange, willEnter, willLeave, transitionComplete} from '../../actions/home'
 import {transition} from '../../css-transition'
-
+import {WILL_LEAVE, WILL_ENTER} from '../../actions/transitions'
 /****************************************************/
 class Home extends React.Component {
   componentDidMount(){
@@ -86,11 +86,27 @@ export default transition(connect(
 )(Home),{
   key: "home",
   willEnter: {
-    classNames: "section animated fadeInLeftBig",
+    classNames: (tState) => {
+      var d = "section animated ";
+      if(tState.bom == WILL_LEAVE){
+        return d + "fadeInLeftBig";
+      }
+      else{
+        return "";
+      }
+    },
     duration: 1000
   },
   willLeave: {
-    classNames: "section animated fadeOutLeftBig",
+    classNames: (tState) => {
+      var d = "section animated ";
+      if(tState.bom == WILL_ENTER){
+        return d + "fadeOutLeftBig";
+      }
+      else{
+        return "";
+      }
+    },
     duration: 1000
   },
 })

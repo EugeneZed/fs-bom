@@ -57,8 +57,7 @@ export function transition(WrappedComponent, options) {
       this.doTransition(callback,options.willEnter,false,true)
     }
     render() {
-      console.log(this.props.transitionState);
-      console.log(this.state.key);
+
       var willEnterClasses =
         typeof options.willEnter.classNames ==="function" ?
           options.willEnter.classNames(this.props.transitionState) :
