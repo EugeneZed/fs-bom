@@ -1,4 +1,17 @@
 @import '~susy/sass/susy';
+$susy: (
+  gutters: 1/10,
+);
 .grid_container{
   @include container();
+}
+
+.firstBomItem{
+  @include span(1 at 1 of 4)
+}
+.lastBomItem{
+  @include span(last 1 of 4)
+}
+.middleBomItem{
+  @include span(1 at 2 of 4)
 }

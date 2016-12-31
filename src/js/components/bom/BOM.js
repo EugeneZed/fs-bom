@@ -18,6 +18,7 @@ import React from 'react';
 /****************Presentation*******************/
 import Box from 'grommet/components/Box';
 import {BomHeader} from './BomHeader'
+import {BomItems} from './BomItems'
 
 class BOM extends React.Component {
 
@@ -25,7 +26,7 @@ class BOM extends React.Component {
     return(
       <Box style={{width:940,margin:"0 auto"}}>
         <BomHeader/>
-
+        <BomItems items={[{a:1},{a:1},{a:1},{a:1}]} />
       </Box>
     )
   }
