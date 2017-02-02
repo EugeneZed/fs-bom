@@ -2,12 +2,12 @@ var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
-  context: path.join(__dirname, 'src/js'),
+  context: path.join(__dirname, 'src/client/js'),
   entry: [
     './index.js',
   ],
   output: {
-    path: path.join(__dirname, 'www'),
+    path: path.join(__dirname, 'src/client/www'),
     filename: 'bundle.js',
   },
   module: {
@@ -43,6 +43,8 @@ var config = {
   },
   plugins: [
        new ExtractTextPlugin("style.css"),
-   ]
+   ],
+  devtool: 'source-map'
+
 };
 module.exports = config;
