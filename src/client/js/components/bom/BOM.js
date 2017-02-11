@@ -19,12 +19,12 @@ import React from 'react';
 import Box from 'grommet/components/Box';
 import BomHeader from './BomHeader'
 import BomItemsFilter from './BomItemsFilter'
-import {transition} from '../../css-transition'
+import {transition} from 'reactimate'
 import {fetchBomItems, openItemModal, closeItemModal} from '../../actions/bom'
 import invertBy from 'lodash/invertBy';
 import includes from 'lodash/includes';
 import reverse from 'lodash/reverse';
-import {WILL_LEAVE, WILL_ENTER} from '../../actions/transitions'
+import {WILL_LEAVE, WILL_ENTER} from 'reactimate/lib/transitionActions'
 import {connect} from 'react-redux';
 import TransitionContainer from '../TransitionContainer';
 import {getBomItems, getBomItemViewModalItem} from '../../store';

@@ -23,8 +23,8 @@ import {AddBomModal} from './AddBomModal'
 /*******************Redux***************************/
 import {connect} from 'react-redux';
 import {fetchBoms, addBom, addBomModalOpen, addBomModalClose, accordionChange, willEnter, willLeave, transitionComplete} from '../../actions/home'
-import {transition} from '../../css-transition'
-import {WILL_LEAVE, WILL_ENTER} from '../../actions/transitions'
+import {transition} from 'reactimate'
+import {WILL_LEAVE, WILL_ENTER} from 'reactimate/lib/transitionActions'
 import invertBy from 'lodash/invertBy';
 import includes from 'lodash/includes';
 

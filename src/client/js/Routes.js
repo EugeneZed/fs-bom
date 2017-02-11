@@ -20,7 +20,7 @@ import Home from './components/home/Home';
 import BOM from './components/bom/BOM';
 import BomItemsGrid from './components/bom/BomItemsGrid'
 import BomItemsTable from './components/bom/BomItemsTable'
-import TransitionContainer from './components/TransitionContainer'
+import {TransitionContainer} from 'reactimate'
 import NotFoundPage from './components/NotFoundPage';
     // let routes = [
     //   { path: '/', component: TransitionContainer, indexRoute: { component: Home },

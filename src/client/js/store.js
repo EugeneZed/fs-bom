@@ -21,7 +21,7 @@ import homeReducer from './reducers/home';
 import bomReducer, * as bomSelectors from './reducers/bom';
 import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
-import transitionReducer from './reducers/transitions'
+import {transitionReducer} from 'reactimate'
 
 const composeEnhancers =
   (typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;

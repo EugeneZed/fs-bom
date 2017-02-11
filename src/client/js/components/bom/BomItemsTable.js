@@ -1,5 +1,5 @@
 import React from 'react';
-import {transition} from '../../css-transition'
+import {transition} from 'reactimate'
 import ReactTable from 'react-table';
 class BomItemsTable extends React.Component{
   render(){

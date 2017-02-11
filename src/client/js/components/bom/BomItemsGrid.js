@@ -1,7 +1,7 @@
 import React from 'react';
 import BomItemsGridRow from './BomItemsGridRow';
 import chunk from 'lodash/chunk'
-import {transition} from '../../css-transition'
+import {transition} from 'reactimate'
 class BomItemsGrid extends React.Component{
 
   render(){
