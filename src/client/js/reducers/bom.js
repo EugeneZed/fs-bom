@@ -4,14 +4,19 @@ import {
   FETCH_BOM_ITEMS_SUCCESS,
   FETCH_BOM_ITEMS_FAILURE,
   ITEM_MODAL_OPEN,
-  ITEM_MODAL_CLOSE
+  ITEM_MODAL_CLOSE,
+  ADD_ITEM_MODAL_OPEN,
+  ADD_ITEM_MODAL_CLOSE,
+  GRAB_ADD_ITEM_MODAL_INFO,
+  SUBMIT_ADD_ITEM_MODAL
 } from '../actions/bom';
 
 const initialState = {
   itemsByBom : {},
   fetchingByBom: {},
   errorsByBom: {},
-  viewItemModalOpenByBom: {}
+  viewItemModalOpenByBom: {},
+  addItemModalOpen: false
 };
 
 const handlers = {
@@ -37,6 +42,12 @@ const handlers = {
   }),
   [ITEM_MODAL_CLOSE]: (state,action) => ({
     viewItemModalOpenByBom: omit(state.viewItemModalOpenByBom, action.bomID)
+  }),
+  [ADD_ITEM_MODAL_OPEN]: (state,action) => ({
+    addItemModalOpen: true
+  }),
+  [ADD_ITEM_MODAL_CLOSE]: (state,action) => ({
+    addItemModalOpen: false
   })
 
 };
@@ -53,6 +64,10 @@ export const getBomItemViewModalItem =
     (state.itemsByBom[bomID] || false)[state.viewItemModalOpenByBom[bomID]] || false
 
 export const getItemNeeded = (item) => item.unitsNeeded + item.spareUnitsNeeded + item.unitsInShop
+
+export const getAddBomItemModalOpen = (state) => state.addItemModalOpen
+
+
 
 export const getItemStatus = (item) => {
     var needed = getItemNeeded(item);

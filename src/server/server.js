@@ -12,6 +12,7 @@ import BodyParser from 'body-parser';
 import addBom from './api/addBom';
 import getBoms from './api/getBoms';
 import getBomItems from './api/getBomItems';
+import scrapeVendorSite from './api/scrape/scrapeVendorSite';
 import { Provider } from 'react-redux';
 import store from '../client/js/store';
 
@@ -40,6 +41,9 @@ app.post("/api/getBoms", (req,res) => {
 
 app.post("/api/getBomItems", (req,res) => {
   res.send(JSON.stringify(getBomItems(req.body)));
+});
+app.post("/api/scrapeVendorSite", (req,res) => {
+  res.send(JSON.stringify(scrapeVendorSite(req.body)));
 });
 
 // universal routing and rendering

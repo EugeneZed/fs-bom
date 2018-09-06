@@ -15,14 +15,11 @@ export default field => {
   }
 
   var placeholder = field.placeholder || "";
+
   return(
-  <FormField label={field.label} error={field.meta.touched ? field.meta.error : undefined}>
-    <TextInput
-        onDOMChange={field.input.onChange}
-        placeHolder={placeholder}
-        suggestions={suggestions}
-        onSelect={({suggestion}) => {field.input.onChange(suggestion)}}
-        value={field.input.value}
-        onBlur={field.input.onBlur}/>
-  </FormField>
+    <FormField label={field.label} error={field.meta.touched ? field.meta.error : undefined}>
+      <textarea rows="5" type='text' id='description' name='description' onChange={(e) => {
+        field.input.onChange(e.target.value);
+      }} />
+    </FormField>
 )}

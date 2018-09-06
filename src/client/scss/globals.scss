@@ -158,6 +158,12 @@ body,
     padding: 0;
 } 
 
+.grommetux-form-field__label {
+    font-size: 15px !important;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
 
 .grommetux-text-input, .grommetux-form-field{
 
@@ -165,6 +171,10 @@ body,
     border: 1px solid rgba(0, 0, 0, 0.5);
     font-size: 20px !important;
     font-weight: 700;
+}
+
+.grommetux-select {
+    overflow: visible;
 }
 
 input {

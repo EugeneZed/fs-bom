@@ -4,7 +4,9 @@ $susy: (
 .grid_container{
   @include container();
 }
-
+.grid_row{
+  padding:11px;
+}
 .firstBomItem{
   @include span(1 at 1 of 4)
 }
@@ -22,7 +24,7 @@ $susy: (
   @include span(6 at 5 of 10)
 }
 $susy: (
-  gutters: 1/12,
+  gutters: 0.3,
 );
 .itemModal1of8Left{
   @include span(1 at 1 of 8)
@@ -44,6 +46,31 @@ $susy: (
 }
 .itemModal8of8{
   @include span(8 at 1 of 8)
+}
+
+
+.addItemModal11of22Left{
+  @include span(11 at 1 of 22)
+}
+.addItemModal11of22Right{
+  @include span(11 at 12 of 22)
+}
+
+.addItemModalPartNumber{
+  @include span(10 at 1 of 22)
+}
+.addItemModalNeeded, .addItemModalSpare{
+  @include span(4 at 11 of 22)
+}
+.addItemModalInShop, .addItemModalCust{
+  @include span(4 at 19 of 22)
+}
+.addItemModalGrab{
+ @include span(8 at 15 of 22);
+}
+
+.addItemModalDescription{
+  @include span(18 at 1 of 22);
 }
 
 .marginTop20{

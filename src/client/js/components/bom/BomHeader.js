@@ -10,7 +10,7 @@ import RefreshIcon from 'grommet/components/icons/base/Refresh'
 import Header from 'grommet/components/Header';
 export default class BomHeader extends React.Component{
   render(){
-    let{bomID, onGridViewClick, onTableViewClick}=this.props;
+    let{bomID, onGridViewClick, onTableViewClick, onAddItemClick}=this.props;
     return(
       <Box><Box pad="small">
         <Header>
@@ -55,7 +55,8 @@ export default class BomHeader extends React.Component{
               className="actionButton bg-orange fg-white"
               primary={true}
               label="Add BOM"
-              href="#"/>
+              href="#"
+              onClick={onAddItemClick}/>
 
           </Box>
         </Header>

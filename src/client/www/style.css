@@ -10673,11 +10673,20 @@ body,
   margin: 0;
   padding: 0; }
 
+.grommetux-form-field__label {
+  font-size: 15px !important;
+  float: left;
+  margin: 0;
+  padding: 0; }
+
 .grommetux-text-input, input, .grommetux-form-field {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 20px !important;
   font-weight: 700; }
+
+.grommetux-select {
+  overflow: visible; }
 
 .grommetux-button {
   display: inline-block;
@@ -10697,6 +10706,9 @@ a {
     content: " ";
     display: block;
     clear: both; }
+
+.grid_row {
+  padding: 11px; }
 
 .firstBomItem {
   width: 23.25581%;
@@ -10724,32 +10736,32 @@ a {
   margin-right: 0; }
 
 .itemModal1of8Left {
-  width: 11.65049%;
+  width: 9.90099%;
   float: left;
-  margin-right: 0.97087%; }
+  margin-right: 2.9703%; }
 
 .itemModal1of8Right {
-  width: 11.65049%;
+  width: 9.90099%;
   float: left;
-  margin-right: 0.97087%; }
+  margin-right: 2.9703%; }
 
 .itemModal2of8Left {
-  width: 24.27184%;
+  width: 22.77228%;
   float: left;
-  margin-right: 0.97087%; }
+  margin-right: 2.9703%; }
 
 .itemModal2of8Right {
-  width: 24.27184%;
+  width: 22.77228%;
   float: left;
-  margin-right: 0.97087%; }
+  margin-right: 2.9703%; }
 
 .itemModal4of8Left {
-  width: 49.51456%;
+  width: 48.51485%;
   float: left;
-  margin-right: 0.97087%; }
+  margin-right: 2.9703%; }
 
 .itemModal4of8Right {
-  width: 49.51456%;
+  width: 48.51485%;
   float: right;
   margin-right: 0; }
 
@@ -10758,6 +10770,41 @@ a {
   float: left;
   margin-left: 0;
   margin-right: 0; }
+
+.addItemModal11of22Left {
+  width: 49.46996%;
+  float: left;
+  margin-right: 1.06007%; }
+
+.addItemModal11of22Right {
+  width: 49.46996%;
+  float: right;
+  margin-right: 0; }
+
+.addItemModalPartNumber {
+  width: 44.87633%;
+  float: left;
+  margin-right: 1.06007%; }
+
+.addItemModalNeeded, .addItemModalSpare {
+  width: 17.31449%;
+  float: left;
+  margin-right: 1.06007%; }
+
+.addItemModalInShop, .addItemModalCust {
+  width: 17.31449%;
+  float: right;
+  margin-right: 0; }
+
+.addItemModalGrab {
+  width: 35.68905%;
+  float: right;
+  margin-right: 0; }
+
+.addItemModalDescription {
+  width: 81.62544%;
+  float: left;
+  margin-right: 1.06007%; }
 
 .marginTop20 {
   margin-top: 20px; }

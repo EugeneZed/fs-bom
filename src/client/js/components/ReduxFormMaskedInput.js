@@ -8,7 +8,7 @@ export default field => {
 
 
   return(
-  <FormField error={field.meta.touched ? field.meta.error : undefined}>
+  <FormField label={field.label}  error={field.meta.touched ? field.meta.error : undefined}>
     <MaskedInput {...field.input} mask={field.mask} placeholder={placeholder} />
   </FormField>
 )}

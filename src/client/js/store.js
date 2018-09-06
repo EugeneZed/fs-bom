@@ -44,5 +44,7 @@ export default createStore(
 
 
 export const getHomeState = (state) => state.home;
+
 export const getBomItems = (state,bomID) => bomSelectors.getBomItems(state.bom,bomID);
 export const getBomItemViewModalItem = (state,bomID) => bomSelectors.getBomItemViewModalItem(state.bom,bomID);
+export const getAddBomItemModalOpen = (state) => bomSelectors.getAddBomItemModalOpen(state.bom)
